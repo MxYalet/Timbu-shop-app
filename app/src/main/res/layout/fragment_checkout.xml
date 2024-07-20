@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/cartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:id="@+id/deliveryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBar"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:text="Delivery Options"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/optionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deliveryTextView"
+                android:layout_margin="18dp"
+                android:background="@drawable/grey_crd">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upcomingButton"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/grey_bg"
+                    android:layout_height="34dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/delivery" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pastButton"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/grey_crd"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/pickup" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="First Name"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstNameLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AdressLine1"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address1Layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address1Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addressLine2"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressLine2Layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine2Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <!-- Country and State Fields in Horizontal Layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Country Field -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="vertical"
+                       >
+
+                        <TextView
+                            android:id="@+id/countryTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Country"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="@+id/monthEditText"
+                            app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/countryLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            app:endIconMode="clear_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/countryText"
+                                android:drawableEnd="@drawable/dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <!-- State Field -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:id="@+id/state_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="State"
+                            android:layout_marginTop="10dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/stateLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            app:endIconMode="clear_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/stateText"
+                                android:drawableEnd="@drawable/dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                android:textStyle="normal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <!-- Country Field -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/postCodeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Post Code*"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/monthEditText"
+                        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/postCodeLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/postCodeText"
+                            android:drawableEnd="@drawable/dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- State Field -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/cityTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City*"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cityLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/cityText"
+                            android:drawableEnd="@drawable/dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/paymentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBar"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:text="Payment Options"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deliveryTextView"
+                android:layout_margin="18dp"
+                android:background="@drawable/grey_crd">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cardButton"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/grey_bg"
+                    android:layout_height="34dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Card" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bankButton"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/grey_crd"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Bank Transfer" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name on Card*"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Card Number*"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cardLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cardText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textStyle="normal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <!-- Country Field -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/ExpiryTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Expiry Date*"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/monthEditText"
+                        app:layout_constraintTop_toBottomOf="@+id/cardNumberEditText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ExpiryLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/countryText"
+                            android:drawableEnd="@drawable/dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- State Field -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/CVV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CVV*"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/CVVLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addComentTextView">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/CVVText"
+                            android:drawableEnd="@drawable/dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:textStyle="normal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/orderSummarySection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24sp"
+                    android:text="@string/order_summary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Items"
+                            android:textColor="@color/title_color"
+                            android:textSize="16sp"
+                            android:textStyle="normal"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="start"
+                            android:text="Delivery"
+                            android:textColor="@color/title_color"
+                            android:textSize="16sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Services"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/title_color"
+                            android:gravity="start"
+                            android:textSize="16sp"
+                            android:textStyle="normal"/>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_base_fare_amt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="4"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_distance_amt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="N5000"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/black"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            android:textStyle="normal"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_time_amt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="N3500"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/black"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            android:textStyle="normal"/>
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/layout_bg"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have a Coupon Code?"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:layout_width="224dp"
+                            android:layout_height="44dp"
+                            android:hint="@string/enter_coupon_code"
+                            android:padding="8dp"
+                            android:background="@drawable/layout_bg" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="68dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textAllCaps="false"
+                            android:textColor="@color/primary_green_500"
+                            android:background="@drawable/button_bg"
+                            android:text="@string/apply" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sub Total"
+                            android:textSize="16sp"
+                            android:layout_marginTop="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="N 780,000"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/primary_green_500"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="160dp"
+                        android:layout_height="58dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@color/primary_green_500"
+                        android:text="@string/proceed_to_checkout"
+                        android:textColor="@color/White"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

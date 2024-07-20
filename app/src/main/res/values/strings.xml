@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pixel implementation Shop app</string>
+    <string name="store">Store\n</string>
+    <string name="Liked">Liked</string>
+    <string name="Orders">Orders\n</string>
+    <string name="account">Account</string>
+    <string name="cart">Cart</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="apply">Apply</string>
+    <string name="enter_coupon_code">Enter Coupon Code</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="delivery">Delivery</string>
+    <string name="pickup">Pickup</string>
+    <string name="email">Email Address</string>
+    <string name="phone">Phone Number</string>
+    <string name="AdressLine1">Address Line 1</string>
+    <string name="addressLine2">Address Line 2</string>
+</resources>
